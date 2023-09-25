@@ -9,16 +9,57 @@
 
     <script>
 
+         let playerSelection = prompt("Choose Your Weaponry!")
+
+         playerSelection = playerSelection.toLowerCase();
+
         function getComputerChoice() {
-            const choices = ["Rock", "Paper", "Scissors"];
-            const random = Math.floor(Math.random() * choices.length);
-            return choices[random]
+            const choices = ["rock", "paper", "scissors"];
+            const compRandom = Math.floor(Math.random() * choices.length);
+            return choices[compRandom]
         };
+        
+/* Code that plays round */
 
-        const computerChoice = getComputerChoice();
+        function playRound(playerSelection, computerSelection) {
+            let CompWinMessage = `You Lose ${computerSelection} beats ${playerSelection}`;
+            let PlayerWinMessage = `You Win! ${playerSelection} beats ${computerSelection}`;
+            let DrawMessage = `Its a Tie! you both put rock`;
+            if (computerSelection === 'paper' && playerSelection === 'rock'){
+                return CompWinMessage;
+            } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
+                return PlayerWinMessage;
+            } else if (computerSelection === 'paper' && playerSelection === 'paper') { 
+                return DrawMessage;
+            } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+                return CompWinMessage;
+            } else if (computerSelection === 'rock' && playerSelection === 'paper') { 
+                return PlayerWinMessage;
+            } else if (computerSelection === 'rock' && playerSelection === 'rock') {
+                return DrawMessage;
+            } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+                return CompWinMessage;
+            } else if (computerSelection === 'scissors' && playerSelection === 'rock') { 
+                return PlayerWinMessage;
+            } else if (computerSelection === 'scissors' && playerSelection === 'scissors') {
+                return DrawMessage;
+            }
+        };
+ 
+    
 
-        console.log(computerChoice)
-;
+
+        const computerSelection = getComputerChoice();
+
+        console.log(playRound(playerSelection, computerSelection));
+        
+
+       
+
+       
+
+    
+        function playround(playerChoice, computerChoice){}
     </script>
     
 </body>
