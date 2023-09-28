@@ -55,6 +55,7 @@ for (let roundsPlayed = 0; roundsPlayed < 5;) {
    
     const playerChoice = prompt("Enter your choice: rock, paper, or scissors (This a game of Best of 5)").toLowerCase();
 
+
     const computerChoice = getComputerChoice();
 
     const result = playRound(playerChoice, computerChoice);
@@ -65,17 +66,16 @@ for (let roundsPlayed = 0; roundsPlayed < 5;) {
 
     console.log(result);
 
-    if (CompScore === 3) {
-        winner = "Computer"
-        alert(`The ${winner} has reached 3 points meaning the game has ended, the winner is the ${winner}`)
-        break;
-    } else if (PlayerScore === 3) {
-        winner = "You"
-        alert(`${winner} have reached 3 points meaning the game has ended, the winner is ${winner.toLowerCase()}!`)
-        break;
-    }
+    
 };
 
+if (CompScore > PlayerScore) {
+        winner = "Computer"
+        alert(`The ${winner} has the highest score after three rounds, the winner is the ${winner}`)
+    } else if (PlayerScore > CompScore) {
+        winner = "You"
+        alert(`${winner} have the highest score after three rounds, the winner is ${winner.toLowerCase()}!`)
+    }
 
     </script>
     
