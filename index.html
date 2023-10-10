@@ -4,80 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel = "stylesheet" href="style.css">
 </head>
 <body>
+    <script src="external.js" defer></script>
 
-    <script>
+<h1>This is a Game of Rock Paper Scissor, first to 3 Wins!</h1>
 
-        
-        function getComputerChoice() {
-            const choices = ["rock", "paper", "scissors"];
-            const compRandom = Math.floor(Math.random() * choices.length);
-            return choices[compRandom]
-        };
-        
+<div class = score>Player: 0 - Computer: 0</div>
 
+<br>
 
-            let CompScore = 0;
-            let PlayerScore = 0;
-            let winner;
+<span class="container">
 
-            function playRound(playerSelection, computerSelection) {
-    if (computerSelection === 'paper' && playerSelection === 'rock') {
-        CompScore++;
-        return `You Lose ${computerSelection} beats ${playerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        PlayerScore++;
-        return `You Win! ${playerSelection} beats ${computerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'paper' && playerSelection === 'paper') {
-        return `It's a Tie! you both put rock, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        CompScore++;
-        return `You Lose ${computerSelection} beats ${playerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-        PlayerScore++;
-        return `You Win! ${playerSelection} beats ${computerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'rock' && playerSelection === 'rock') {
-        return `It's a Tie! you both put rock, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        CompScore++;
-        return `You Lose ${computerSelection} beats ${playerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        PlayerScore++;
-        return `You Win! ${playerSelection} beats ${computerSelection}, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    } else if (computerSelection === 'scissors' && playerSelection === 'scissors') {
-        return `It's a Tie! you both put rock, the score is ${CompScore} (Computer) - ${PlayerScore} (You) `;
-    }
-};
+    <span class="1container">
+
+<button class="rock">Rock</button>
+<button class="paper">Paper</button>
+<button class="scissors">Scissors</button>
+
+</span>
+
+<span class="2container">
+
+<span class="endMessages">
+
+    <p class="winner">You're the winner congratulations, reload the page to play again</p>
+
+    <p class="loser">You Lost, reload the page to give it another shot</p>
+
+</span>
+
+<span class="messages">
+
+    <p class="win"></p>
+
+    <p class="lose"></p>
+
+    <p class="tie"></p>
+
+        </span>
+
+    </span>
+
+</span>
 
 
-for (let roundsPlayed = 0; roundsPlayed < 5;) {
-   
-    const playerChoice = prompt("Enter your choice: rock, paper, or scissors (This a game of Best of 5)").toLowerCase();
-
-
-    const computerChoice = getComputerChoice();
-
-    const result = playRound(playerChoice, computerChoice);
-
-    if (!result.includes("Tie")) {
-        roundsPlayed++;
-    };
-
-    console.log(result);
-
-    
-};
-
-if (CompScore > PlayerScore) {
-        winner = "Computer"
-        alert(`The ${winner} has the highest score after three rounds, the winner is the ${winner}`)
-    } else if (PlayerScore > CompScore) {
-        winner = "You"
-        alert(`${winner} have the highest score after three rounds, the winner is ${winner.toLowerCase()}!`)
-    }
-
-    </script>
     
 </body>
 </html>
