@@ -13,28 +13,28 @@ function getComputerChoice() {
 
     function winMessage (playerSelection, computerSelection) {
         const win = document.querySelector('.win');
-        win.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        win.textContent = `You win! You chose ${playerSelection} which beats the Computer's choice of ${computerSelection}`;
 
         setTimeout(() => {
             win.style.color ="black";
         }, 10);
 
         setTimeout(() => {
-            win.style.color ="white";
-        }, 1000);
+            win.style.color ="pink";
+        }, 4000);
     };
 
     function loseMessage (playerSelection, computerSelection) {
         const lose = document.querySelector('.lose');
-        lose.textContent = `You lose, ${computerSelection} beats ${playerSelection}`;
+        lose.textContent = `You lose, the Computer chose ${computerSelection} which beats your choice of ${playerSelection}`;
 
         setTimeout(() => {
             lose.style.color ="black";
         }, 10);
 
         setTimeout(() => {
-            lose.style.color ="white";
-        }, 1000);
+            lose.style.color ="pink";
+        }, 4000);
     };
 
     function tieMessage(playerSelection) {
@@ -46,20 +46,22 @@ function getComputerChoice() {
         }, 10);
 
         setTimeout(() => {
-            tie.style.color ="white";
-        }, 1000);
+            tie.style.color ="pink";
+        }, 4000);
     };
 
 
-    function WinnerMessage(playerSelection) {
+    function WinnerMessage() {
         const winner = document.querySelector('.winner');
-        tie.textContent = `You're the winner congratulations! Reload the page to play again`;
-
-        setTimeout(() => {
-            tie.style.color ="black";
-        }, 10);
-
+        winner.textContent = `You're the winner, congratulations! Hit that Retry button to play again`;
+        winner.style.color = "red";
     };
+
+    function loserMessage() {
+        const loser = document.querySelector('.loser');
+        loser.textContent = `You Lost, hit that Retry button to give it another shot`;
+        loser.style.color = "red";
+    }
 
     
     let CompScore = 0;
@@ -93,7 +95,8 @@ if (computerSelection === playerSelection ) {
     const result = playRound('Rock', computerChoice);
     console.log(result);
     updateScore();
-        }
+    checkForWinner();
+        } 
     });
     
     Paper.addEventListener('click', ()  => {
@@ -102,7 +105,8 @@ if (computerSelection === playerSelection ) {
     const result = playRound('Paper', computerChoice);
     console.log(result);
     updateScore();
-        }
+    checkForWinner();
+        } 
     });
     
     Scissors.addEventListener('click', ()  => {
@@ -111,12 +115,17 @@ if (computerSelection === playerSelection ) {
     const result = playRound('Scissors', computerChoice);
     console.log(result);
     updateScore();
-        } else if  (CompScore > PlayerScore) {
-
-        }
+    checkForWinner();
+        } 
     });
 
-
+function checkForWinner () {
+    if (PlayerScore === 3) {
+        WinnerMessage();
+    } else if (CompScore === 3) {
+        loserMessage();
+    }
+}
 
 
 

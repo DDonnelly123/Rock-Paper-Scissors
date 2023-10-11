@@ -7,47 +7,62 @@
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
+    
     <script src="external.js" defer></script>
 
-<h1>This is a Game of Rock Paper Scissor, first to 3 Wins!</h1>
+    <div class="upperContainer">
 
-<div class = score>Player: 0 - Computer: 0</div>
+        <h1>This is a Game of Rock Paper Scissor, first to 3 Wins!</h1>
+
+    </div>
+
+    <div class="scoreContainer">
+
+        <div class = score>Player: 0 - Computer: 0</div>
+
+    </div>
 
 <br>
 
-<span class="container">
+    <span class="container">
 
-    <span class="1container">
+        <span class="oneContainer">
 
-<button class="rock">Rock</button>
-<button class="paper">Paper</button>
-<button class="scissors">Scissors</button>
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
 
-</span>
+        </span>
 
-<span class="2container">
+        <span class="buttonContainer">
 
-<span class="endMessages">
+            <button class="refresh" onclick="window.location.reload();">Retry</button>
 
-    <p class="winner">You're the winner congratulations, reload the page to play again</p>
+        </span>
 
-    <p class="loser">You Lost, reload the page to give it another shot</p>
+        <span class="twoContainer">
 
-</span>
+            <span class="endMessages">
 
-<span class="messages">
+                <p class="winner"></p>
 
-    <p class="win"></p>
+                <p class="loser"></p>
 
-    <p class="lose"></p>
+            </span>
 
-    <p class="tie"></p>
+            <span class="messages">
+
+                <p class="win"></p>
+
+                <p class="lose"></p>
+
+                <p class="tie"></p>
+
+            </span>
 
         </span>
 
     </span>
-
-</span>
 
 
     
