@@ -92,8 +92,7 @@ if (computerSelection === playerSelection ) {
     Rock.addEventListener('click', ()  => {
         if (CompScore < 3 && PlayerScore < 3){
     const computerChoice = getComputerChoice();
-    const result = playRound('Rock', computerChoice);
-    console.log(result);
+    playRound('Rock', computerChoice);
     updateScore();
     checkForWinner();
         } 
@@ -102,8 +101,7 @@ if (computerSelection === playerSelection ) {
     Paper.addEventListener('click', ()  => {
         if (CompScore < 3 && PlayerScore < 3){
     const computerChoice = getComputerChoice();
-    const result = playRound('Paper', computerChoice);
-    console.log(result);
+    playRound('Paper', computerChoice);
     updateScore();
     checkForWinner();
         } 
@@ -112,8 +110,7 @@ if (computerSelection === playerSelection ) {
     Scissors.addEventListener('click', ()  => {
         if (CompScore < 3 && PlayerScore < 3){
     const computerChoice = getComputerChoice();
-    const result = playRound('Scissors', computerChoice);
-    console.log(result);
+    playRound('Scissors', computerChoice);
     updateScore();
     checkForWinner();
         } 
